@@ -1,0 +1,32 @@
+@import "./styles/partials/variables";
+@import "./styles/partials/footer";
+@import "./styles/partials/signupcard";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: $font-primary;
+}
+
+.monolith_background {
+    position: fixed;
+    width: 100vw; height: 100vh;
+    background: linear-gradient(to bottom, $brand-secondary, $surface-bg);
+    z-index: -1;
+}
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+

@@ -1,1 +1,152 @@
-/*# sourceMappingURL=main.css.map */
+.footer {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #757575;
+  flex-wrap: wrap;
+}
+
+.footer__logo-img {
+  height: 50px;
+  width: auto;
+}
+
+.footer__regulatory-img {
+  height: 2.5rem;
+  margin-left: 1rem;
+}
+
+.footer__socials i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  color: #54b848;
+  cursor: pointer;
+}
+
+.footer__disclaimer {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f9f9f9;
+}
+.footer__disclaimer p {
+  font-size: 0.7rem;
+  color: #757575;
+}
+
+.footer__links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__links a {
+  text-decoration: none;
+  color: #757575;
+  font-weight: 600;
+}
+
+.signup-card {
+  background-color: #ffffff;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.form_header {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #003f2d;
+}
+
+.form_definition {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  color: #757575;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.form-group input:focus {
+  outline: none;
+  border-color: #54b848;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #003f2d;
+}
+
+button[type=submit] {
+  width: 100%;
+  padding: 1rem;
+  background-color: #54b848;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+button[type=submit]:hover {
+  background-color: #003f2d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.monolith_background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #003f2d, #F5F9F7);
+  z-index: -1;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}/*# sourceMappingURL=main.css.map */

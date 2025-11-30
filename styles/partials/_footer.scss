@@ -1,0 +1,46 @@
+.footer {
+    width: 100%;
+    background-color: $white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 0.8rem;
+    color: $neutral-300;
+    flex-wrap: wrap;
+}
+.footer__logo-img {
+    height: 50px;
+    width: auto;
+}
+.footer__regulatory-img {
+    height: 2.5rem;
+    margin-left: 1rem;
+}
+.footer__socials i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    color: $brand-primary;
+    cursor: pointer;
+}
+.footer__disclaimer {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid $neutral-100;
+    
+    p {
+        font-size: 0.7rem;
+        color: $neutral-300;
+    }
+}
+.footer__links ul {
+    list-style: none;
+    padding: 0;
+}
+.footer__links a {
+    text-decoration: none;
+    color: $neutral-300;
+    font-weight: 600;
+}
