@@ -1,4 +1,4 @@
-🚀 Project NanoBanana: TD Financial Health Beta Console
+🚀 TD Financial Health Beta Console
 This project is a high-concept, fully responsive sign-up console developed for the TD Industry Sprint. It reimagines the onboarding process as an immersive, cyberpunk "initialization sequence" to maximize engagement and demonstrate advanced frontend integration capabilities.
 
 ✨ Key Features
