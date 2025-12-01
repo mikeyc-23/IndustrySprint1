@@ -1,0 +1,6 @@
+Temporary files created by VS Code, Live Server, etc.
+.vscode/
+
+Sass/SCSS Compilation Maps
+*.css.map
+
