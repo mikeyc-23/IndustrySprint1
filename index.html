@@ -4,49 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industry Sprint</title>
+    <!-- We will put the new styles in main.css -->
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="./scripts/script.js" defer></script>
 </head>
 <body>
-    <div class="monolith_background">
+    
+    <!-- 1. The Background Canvas -->
+    <canvas id="glitch-bg"></canvas>
 
-    </div>
     <main class="content-wrapper">
-        <div class="TD_monolith">
+        
+        <!-- 2. THE NEW UNIFIED CONSOLE -->
+        <div class="console-wrapper">
+            
+            <!-- Left Side: Holographic Scanner -->
+            <div class="console-visual">
+                <div class="grid-overlay"></div>
+                <div class="scanner-line"></div>
+                <div class="holo-logo">TD</div>
+            </div>
 
+            <!-- Right Side: The Form (Integrated) -->
+            <div class="console-form">
+                <h2>Signup for TD Financial Health Beta</h2>
+                <p>Initialize your account to access the secure financial grid.</p>
+                
+                <form>
+                    <!-- Row for Names -->
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="firstname">First Name</label>
+                            <input type="text" id="firstname" name="firstname" placeholder="Jane">
+                        </div>
+                        <div class="input-group">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" id="lastname" name="lastname" placeholder="Doe">
+                        </div>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="input-group">
+                        <label for="email">Access ID (Email)</label>
+                        <input type="email" id="email" name="email" placeholder="user@example.com">
+                    </div>
+
+                    <button type="submit">INITIALIZE</button>
+                </form>
+            </div>
         </div>
 
-        <section class="signup-card">
-            <h1 class="form_header">Join the TD Financial Health Beta</h1>
-            <p class="form_definition">Complete the following to sign up for the upcoming financial health services platform.</p>
-            <form>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstname">First Name</label>
-                        <input type="text" id="firstname" name="firstname">
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname">Last Name</label>
-                        <input type="text" id="lastname" name="lastname">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div class="form-group">
-                    <button type="submit">Sign Up</button>
-                </div>
-            </form>
-        </section>
     </main>
 
+    <!-- 3. Your Existing Footer (Unchanged) -->
     <footer class="footer">
         <div class="footer__brand">
-            <img src="asset\images\td-logo-desktop.png" alt="TD Shield" class="footer__logo-img">
+            <img src="asset/images/td-logo-desktop.png" alt="TD Shield" class="footer__logo-img">
         </div>
         <div class="footer__links">
             <ul>

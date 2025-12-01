@@ -1,32 +1,68 @@
-@import "./styles/partials/variables";
-@import "./styles/partials/footer";
-@import "./styles/partials/signupcard";
+/* main page.scss 
+   This file imports all components and defines global styles.
+*/
 
-* {
+
+@import './styles/partials/variables';
+
+:root {
+    --td-green: #{$brand-primary}; 
+    --neon-green: #{$theme-neon-green}; 
+    --dark-bg: #{$theme-dark-bg}; 
+    --glass: #{$theme-glass-bg};
+    --border: #{$theme-border-glow}; 
+}
+
+
+html {
+    height: 100%;
+}
+
+body {
+    
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: $font-primary;
+    flex-direction: column; 
+    
+    background-color: $theme-dark-bg; 
+    color: $white; 
+    font-family: $font-primary; 
 }
 
-.monolith_background {
+/* 4. BACKGROUND part */
+#glitch-bg {
     position: fixed;
-    width: 100vw; height: 100vh;
-    background: linear-gradient(to bottom, $brand-secondary, $surface-bg);
-    z-index: -1;
-}
-.content-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    opacity: 0.6; 
+    pointer-events: none;
 }
 
+/* CONTENT WRAPPER */
+.content-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 20px;
+    
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+.footer {
+    z-index: 10;
+}
+
+
+/* Imports */
+@import './styles/partials/monolith'; 
+@import './styles/partials/footer';

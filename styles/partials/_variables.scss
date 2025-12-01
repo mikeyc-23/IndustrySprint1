@@ -1,16 +1,28 @@
-// Brand Colors
-$brand-primary:   #54b848; 
-$brand-secondary: #003f2d; 
-$brand-tertiary:  #038203;
+// =========================================
+// BRAND COLORS (Original)
+// =========================================
+$brand-primary: #54b848; 
+$brand-secondary:#003f2d; 
+$brand-tertiary:#038203;
 
-// Neutral & Background Colors
-$surface-bg:      #F5F9F7; 
-$white:           #ffffff;
-$neutral-100:     #f9f9f9;
-$neutral-300:     #757575; 
+// =========================================
+// GLITCH / CONSOLE THEME COLORS 
+// =========================================
+$theme-dark-bg:   #050505;      
+$theme-neon-green: #39ff14;     
+$theme-border-glow: rgba(57, 255, 20, 0.3); 
+$theme-glass-bg: rgba(255, 255, 255, 0.03); 
 
-// Functional Colors
-$error-color:     #d32f2f; 
+// =========================================
+// NEUTRAL & OTHER COLORS
+// =========================================
+$surface-bg:#F5F9F7; 
+$white: #ffffff;
+$neutral-100: #f9f9f9;
+$neutral-300: #757575; 
+$error-color: #d32f2f; 
 
-//Fonts
+// =========================================
+// FONTS
+// =========================================
 $font-primary: "Inter", sans-serif;

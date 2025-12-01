@@ -1,47 +1,316 @@
+/* main page.scss 
+   This file imports all components and defines global styles.
+*/
+:root {
+  --td-green: #54b848;
+  --neon-green: #39ff14;
+  --dark-bg: #050505;
+  --glass: rgba(255, 255, 255, 0.03);
+  --border: rgba(57, 255, 20, 0.3);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #050505;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+/* 4. BACKGROUND part */
+#glitch-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* CONTENT WRAPPER */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  z-index: 10;
+}
+
+/* Imports */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 20px;
+}
+
+/* --- CONSOLE --- */
+.console-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  height: 550px;
+  /* GLASS-effect */
+  background: rgba(10, 20, 10, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(57, 255, 20, 0.1), 0 20px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  animation: floatConsole 6s ease-in-out infinite;
+}
+
+/* --- VISUAL SCANNER --- */
+.console-visual {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(180deg, rgba(0, 50, 0, 0.2), rgba(0, 20, 0, 0.8));
+  border-right: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.1;
+}
+
+.holo-logo {
+  font-size: 150px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--neon-green);
+  text-shadow: 0 0 30px var(--neon-green);
+  position: relative;
+  z-index: 2;
+}
+
+.scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--neon-green);
+  box-shadow: 0 0 20px var(--neon-green);
+  animation: scan 3s linear infinite;
+  z-index: 3;
+  opacity: 0.8;
+}
+
+/* --- FORM --- */
+.console-form {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+}
+.console-form h2 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #fff, #ccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.console-form p {
+  color: #ddd;
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* Form Elements */
+.form-row {
+  display: flex;
+  gap: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+label {
+  display: block;
+  color: var(--neon-green);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s;
+}
+input:focus {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  margin-top: 10px;
+  background: var(--td-green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+button:hover {
+  background: var(--neon-green);
+  color: black;
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+}
+
+/* --- Animations and respnse --- */
+@keyframes scan {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+@keyframes floatConsole {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@media (max-width: 900px) {
+  .console-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+  .console-visual {
+    height: 200px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .holo-logo {
+    font-size: 80px;
+  }
+  .console-form {
+    padding: 30px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+/* =========================================
+   FOOTER STYLES (Increased Size & Grouping)
+   ========================================= */
 .footer {
   width: 100%;
+  /* Note: Background color is expected to be overridden to black by main.scss */
   background-color: #ffffff;
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 2rem; /* Slightly more vertical padding */
   display: flex;
-  justify-content: space-evenly;
+  /* CHANGE: Center alignment prevents elements from stretching edge-to-edge, 
+     allowing the 3rem gap to define clean columns. */
+  justify-content: center;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.85rem; /* Increased base font size */
   color: #757575;
   flex-wrap: wrap;
+  /* Gap defines distance between columns (Logo, Links, Address, Socials) */
+  gap: 3rem;
+}
+
+.footer__brand {
+  /* Logo container */
 }
 
 .footer__logo-img {
-  height: 50px;
+  height: 45px; /* Increased logo size */
   width: auto;
 }
 
 .footer__regulatory-img {
-  height: 2.5rem;
-  margin-left: 1rem;
+  height: 3rem; /* Increased regulatory icon size */
+  margin-left: 1rem; /* Increased space between regulatory images */
 }
 
 .footer__socials i {
-  font-size: 1.2rem;
-  margin-right: 1rem;
-  color: #54b848;
+  font-size: 1.4rem; /* Increased social icon size */
+  margin-right: 0.8rem;
+  color: #003f2d;
   cursor: pointer;
 }
 
 .footer__disclaimer {
   width: 100%;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   padding-top: 1rem;
   border-top: 1px solid #f9f9f9;
 }
 .footer__disclaimer p {
-  font-size: 0.7rem;
+  font-size: 0.75rem; /* Slightly increased disclaimer font */
   color: #757575;
 }
 
 .footer__links ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  gap: 1rem; /* Slightly increased link spacing */
 }
 
 .footer__links a {
@@ -50,103 +319,43 @@
   font-weight: 600;
 }
 
-.signup-card {
-  background-color: #ffffff;
-  padding: 2rem 3rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 450px;
-}
-
-.form_header {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #003f2d;
-}
-
-.form_definition {
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
-  color: #757575;
-  line-height: 1.5;
-}
-
-.form-group {
-  margin-bottom: 1.2rem;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-.form-group input:focus {
-  outline: none;
-  border-color: #54b848;
-}
-
-.form-row {
+/* Ensure social and regulatory logos are together and spaced out */
+.footer__bottom {
   display: flex;
-  gap: 1rem;
-}
-
-.form-row .form-group {
-  flex: 1;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #003f2d;
-}
-
-button[type=submit] {
-  width: 100%;
-  padding: 1rem;
-  background-color: #54b848;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-button[type=submit]:hover {
-  background-color: #003f2d;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: "Inter", sans-serif;
+  gap: 1.5rem; /* Increased gap between social and regulatory image groups */
 }
 
-.monolith_background {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(to bottom, #003f2d, #F5F9F7);
-  z-index: -1;
-}
-
-.content-wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
+/* =========================================
+   MOBILE RESPONSIVENESS (Preserved)
+   ========================================= */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    text-align: left;
+  }
+  .footer > div {
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .footer__links ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .footer__address p {
+    margin: 0;
+  }
+  .footer__regulatory-img {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
 }/*# sourceMappingURL=main.css.map */

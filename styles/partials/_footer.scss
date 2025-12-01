@@ -1,46 +1,114 @@
+/* =========================================
+   FOOTER STYLES (Increased Size & Grouping)
+   ========================================= */
+
 .footer {
     width: 100%;
-    background-color: $white;
-    padding: 1.5rem 2rem;
+    /* Note: Background color is expected to be overridden to black by main.scss */
+    background-color: $white; 
+    padding: 1.25rem 2rem; /* Slightly more vertical padding */
     display: flex;
-    justify-content: space-evenly;
+    /* CHANGE: Center alignment prevents elements from stretching edge-to-edge, 
+       allowing the 3rem gap to define clean columns. */
+    justify-content: center; 
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 0.85rem; /* Increased base font size */
     color: $neutral-300;
     flex-wrap: wrap;
+    
+    /* Gap defines distance between columns (Logo, Links, Address, Socials) */
+    gap: 3rem; 
 }
+
+.footer__brand {
+    /* Logo container */
+}
+
 .footer__logo-img {
-    height: 50px;
+    height: 45px; /* Increased logo size */
     width: auto;
 }
+
 .footer__regulatory-img {
-    height: 2.5rem;
-    margin-left: 1rem;
+    height: 3rem; /* Increased regulatory icon size */
+    margin-left: 1rem; /* Increased space between regulatory images */
 }
+
 .footer__socials i {
-    font-size: 1.2rem;
-    margin-right: 1rem;
-    color: $brand-primary;
+    font-size: 1.4rem; /* Increased social icon size */
+    margin-right: 0.8rem; 
+    color: $brand-secondary; 
     cursor: pointer;
 }
+
 .footer__disclaimer {
     width: 100%;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem; 
     padding-top: 1rem;
     border-top: 1px solid $neutral-100;
     
     p {
-        font-size: 0.7rem;
+        font-size: 0.75rem; /* Slightly increased disclaimer font */
         color: $neutral-300;
     }
 }
+
 .footer__links ul {
     list-style: none;
     padding: 0;
+    display: flex; 
+    gap: 1rem; /* Slightly increased link spacing */
 }
+
 .footer__links a {
     text-decoration: none;
     color: $neutral-300;
     font-weight: 600;
+}
+
+/* Ensure social and regulatory logos are together and spaced out */
+.footer__bottom {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Increased gap between social and regulatory image groups */
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (Preserved)
+   ========================================= */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; 
+        align-items: flex-start;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .footer > div {
+        width: 100%; 
+        margin-bottom: 0.8rem; 
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem; 
+        margin-top: 0.5rem;
+    }
+
+    .footer__links ul {
+        flex-direction: column; 
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .footer__address p {
+        margin: 0; 
+    }
+    
+    .footer__regulatory-img {
+        margin-left: 0;
+        margin-right: 1rem;
+    }
 }
