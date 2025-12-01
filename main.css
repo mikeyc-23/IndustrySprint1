@@ -273,10 +273,6 @@ button:hover {
   gap: 3rem;
 }
 
-.footer__brand {
-  /* Logo container */
-}
-
 .footer__logo-img {
   height: 45px; /* Increased logo size */
   width: auto;
