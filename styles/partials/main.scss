@@ -1,16 +1,16 @@
 /* main page.scss 
    This file imports all components and defines global styles.
 */
-
-
-@import './styles/partials/variables';
+@use './variables' as vars;
+@use './monolith';
+@use './footer';
 
 :root {
-    --td-green: #{$brand-primary}; 
-    --neon-green: #{$theme-neon-green}; 
-    --dark-bg: #{$theme-dark-bg}; 
-    --glass: #{$theme-glass-bg};
-    --border: #{$theme-border-glow}; 
+    --td-green: #{vars.$brand-primary}; 
+    --neon-green: #{vars.$theme-neon-green}; 
+    --dark-bg: #{vars.$theme-dark-bg}; 
+    --glass: #{vars.$theme-glass-bg};
+    --border: #{vars.$theme-border-glow}; 
 }
 
 
@@ -29,9 +29,9 @@ body {
     display: flex;
     flex-direction: column; 
     
-    background-color: $theme-dark-bg; 
-    color: $white; 
-    font-family: $font-primary; 
+    background-color: vars.$theme-dark-bg; 
+    color: white; 
+    font-family: vars.$font-primary; 
 }
 
 /* 4. BACKGROUND part */
@@ -63,6 +63,3 @@ body {
 }
 
 
-/* Imports */
-@import './styles/partials/monolith'; 
-@import './styles/partials/footer';

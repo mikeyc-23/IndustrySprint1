@@ -69,9 +69,9 @@ function draw(currentTime) {
 }
 draw(0);
 
-// =
+
 // APPLICATION LOGIC
-// =
+
 
 /**
  * Injects necessary global CSS rules for error states
@@ -129,22 +129,14 @@ const allInputs = [firstNameInput, lastNameInput, emailInput];
 
 // VALIDATION FUNCTIONS ---
 
-/**
- * Validates a name (first or last) to ensure it only contains letters and basic punctuation.
- * @param {string} name - The name string to validate.
- * @returns {boolean} True if valid, false otherwise.
- */
+
 function validateName(name) {
     // Only allows letters, spaces, hyphens, and apostrophes
     const nameRegex = /^[a-zA-Z\s'-]+$/;
     return nameRegex.test(name.trim()) && name.trim().length > 1;
 }
 
-/**
- * Validates an email address.
- * @param {string} email
- * @returns {boolean} 
- */
+
 function validateEmail(email) {
     // Standard email validation RegEx 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -153,10 +145,7 @@ function validateEmail(email) {
 
 // STATE HANDLERS
 
-/**
- * Sets the console's visual status
- * @param {string} status - 'error' or 'success'
- */
+
 function setVisualState(status) {
     const isError = status === 'error';
     
@@ -170,11 +159,7 @@ function setVisualState(status) {
     holoLogo.classList.toggle('error-state', isError);
 }
 
-/**
- * Toggles the error class on a specific input field.
- * @param {HTMLElement} input
- * @param {boolean} isValid 
- */
+
 function setInputError(input, isValid) {
     input.classList.toggle('input-error', !isValid);
 }
@@ -193,10 +178,8 @@ function resetFormState() {
     submitButton.disabled = false;
 }
 
-/**
- * Displays a custom error message
- * @param {string} message
- */
+
+
 function handleError(message) {
     // Inject custom error styles
     const styleId = 'error-message-style';
@@ -227,10 +210,7 @@ function handleError(message) {
 
 // --- 4. API & Submission Logic ---
 
-/**
- * Handles the multi-step form submission
- * @param {Event} e - The form submission event.
- */
+
 async function handleSubmit(e) {
     e.preventDefault(); 
     resetFormState(); 

@@ -1,11 +1,9 @@
-/* =========================================
-   FOOTER STYLES (Increased Size & Grouping)
-   ========================================= */
-
+@use './variables' as vars;
+//FOOTER STYLES (Increased Size & Grouping)
 .footer {
     width: 100%;
     /* Note: Background color is expected to be overridden to black by main.scss */
-    background-color: $white; 
+    background-color: white; 
     padding: 1.25rem 2rem; /* Slightly more vertical padding */
     display: flex;
     /* CHANGE: Center alignment prevents elements from stretching edge-to-edge, 
@@ -13,7 +11,7 @@
     justify-content: center; 
     align-items: center;
     font-size: 0.85rem; /* Increased base font size */
-    color: $neutral-300;
+    color: vars.$neutral-300;
     flex-wrap: wrap;
     
     /* Gap defines distance between columns (Logo, Links, Address, Socials) */
@@ -35,7 +33,7 @@
 .footer__socials i {
     font-size: 1.4rem; /* Increased social icon size */
     margin-right: 0.8rem; 
-    color: $brand-secondary; 
+    color: vars.$brand-secondary; 
     cursor: pointer;
 }
 
@@ -44,11 +42,11 @@
     text-align: center;
     margin-top: 1.5rem; 
     padding-top: 1rem;
-    border-top: 1px solid $neutral-100;
+    border-top: 1px solid vars.$neutral-100;
     
     p {
         font-size: 0.75rem; /* Slightly increased disclaimer font */
-        color: $neutral-300;
+        color: vars.$neutral-300;
     }
 }
 
@@ -61,7 +59,7 @@
 
 .footer__links a {
     text-decoration: none;
-    color: $neutral-300;
+    color: vars.$neutral-300;
     font-weight: 600;
 }
 
